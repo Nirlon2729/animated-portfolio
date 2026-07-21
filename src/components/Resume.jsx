@@ -9,10 +9,10 @@ import {
     FaArrowLeft,
     FaExternalLinkAlt,
 } from "react-icons/fa";
-// import profileImage from "../assets/image/resume.png";
+
 import "../css/resume.css";
-// import resumePDF from "../assets/resume.pdf";
-import resumePDF from "../assets/resume.pdf";
+
+const resumePDF = "/resume1.pdf";
 
 
 
@@ -149,13 +149,15 @@ function Resume() {
 
                     {/* Right Image */}
                     <div className="resume-image-card">
-    <iframe
-        src={`${resumePDF}#zoom=page-fit`}
-        title="Resume"
-        loading="lazy"
-        sandbox="allow-same-origin"
-    />
-</div>
+                        <iframe
+                            src={resumePDF}
+                            title="Resume"
+                            loading="lazy"
+                            width="100%"
+                            height="100%"
+                            style={{ border: "none" }}
+                        />
+                    </div>
 
                 </section>
 

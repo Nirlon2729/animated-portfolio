@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../css/about.css";
-
+import { Link } from "react-router-dom";
 import nirlon from "../assets/image/nirlon.jpg";
 import resume from "../assets/resume - Copy.pdf";
 
@@ -137,23 +137,24 @@ function About() {
             </h3>
 
             <p>
-              
+
             </p>
 
             <div className="typing-container">
               <span className="typing-text">
                 {displayText}
               </span>
+
+            </div>
+            <div className="about-buttons">
+              <Link
+                to="/resume"
+                className="about-resume-btn"
+              >
+                View Resume
+              </Link>
             </div>
 
-            <a
-              href={resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn"
-            >
-              View Resume ↗
-            </a>
           </div>
         </div>
       </div>
