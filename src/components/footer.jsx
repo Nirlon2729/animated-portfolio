@@ -113,7 +113,11 @@ function Footer() {
           <Link to="/CertificatePage">
             Certificates
           </Link>
-         
+
+          <Link to="/resume">
+            Resume
+          </Link>
+
         </div>
 
       </div>
