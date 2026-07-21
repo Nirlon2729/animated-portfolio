@@ -71,15 +71,17 @@ function ChatBot() {
   ]);
 
   const bottomRef = useRef(null);
-  const sendAudio = useRef(new Audio(sendSound));
-  const getAudio = useRef(new Audio(getSound));
+  const sendAudio = useRef(null);
+  const getAudio = useRef(null);
   useEffect(() => {
     bottomRef.current?.scrollIntoView({
       behavior: "smooth"
     });
   }, [messages]);
   useEffect(() => {
+    sendAudio.current = new Audio(sendSound);
     sendAudio.current.volume = 0.7;
+    getAudio.current = new Audio(getSound);
     getAudio.current.volume = 0.7;
   }, []);
 
@@ -87,8 +89,10 @@ function ChatBot() {
     const text = customMessage || input;
 
     if (!text.trim()) return;
-    sendAudio.current.currentTime = 0;
-    sendAudio.current.play().catch(() => { });
+    if (sendAudio.current) {
+      sendAudio.current.currentTime = 0;
+      sendAudio.current.play().catch(() => { });
+    }
 
     const userMessage = {
       id: `user-${Date.now()}-${Math.random()}`,
@@ -104,8 +108,10 @@ function ChatBot() {
         sender: "bot",
         text: getReply(text)
       };
-      getAudio.current.currentTime = 0;
-      getAudio.current.play().catch(() => { });
+      if (getAudio.current) {
+        getAudio.current.currentTime = 0;
+        getAudio.current.play().catch(() => { });
+      }
 
       setMessages((prev) => [...prev, botMessage]);
     }, 500);

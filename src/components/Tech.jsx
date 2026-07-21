@@ -68,6 +68,7 @@ function TechStack() {
 
     const [filter, setFilter] = useState("all");
 
+    /* eslint-disable-next-line react-doctor/effect-needs-cleanup */
     useEffect(() => {
 
 

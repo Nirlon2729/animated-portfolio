@@ -13,7 +13,6 @@ import {
 
 import "../css/biodata.css";
 
-import Nirlon from "../assets/image/pf/p4.jpeg";
 import backgroundMusic from "../assets/sound/River Flows In You.mp3";
 import Photo1 from "../assets/image/pf/p1.jpeg";
 import Photo2 from "../assets/image/pf/p2.jpeg";
@@ -27,6 +26,20 @@ import Photo9 from "../assets/image/pf/p9.jpeg";
 import Photo10 from "../assets/image/pf/p10.jpeg";
 
 import Photo12 from "../assets/image/pf/p12.jpeg";
+
+const photos = [
+  Photo1,
+  Photo2,
+  Photo3,
+  Photo4,
+  Photo5,
+  Photo6,
+  Photo7,
+  Photo8,
+  Photo9,
+  Photo10,
+  Photo12,
+];
 
 function Biodata() {
 
@@ -80,21 +93,6 @@ function Biodata() {
    PHOTO SLIDER
 ============================================================ */
 
-  const photos = [
-    Photo1,
-    Photo2,
-    Photo3,
-    Photo4,
-    Photo5,
-    Photo6,
-    Photo7,
-    Photo8,
-    Photo9,
-    Photo10,
-
-    Photo12, 
-  ];
-
   const [currentPhoto, setCurrentPhoto] = useState(0);
 
   const nextPhoto = () => {
@@ -131,13 +129,14 @@ function Biodata() {
   // Component
   // ===========================
 useEffect(() => {
-  setTimeout(() => {
+  const timer = setTimeout(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "auto",
     });
   }, 0);
+  return () => clearTimeout(timer);
 }, []);
   return (
     <section className="bioPage">
@@ -165,6 +164,7 @@ useEffect(() => {
           type="button"
           className="musicControl"
           onClick={toggleMusic}
+          aria-label={isPlaying ? "Pause background music" : "Play background music"}
         >
           {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
@@ -539,7 +539,7 @@ useEffect(() => {
 
               <img
                 src={photos[currentPhoto]}
-                alt={`Photo ${currentPhoto + 1}`}
+                alt={`Nirlon Macwan profile view ${currentPhoto + 1}`}
                 className="sliderPhoto"
               />
 
@@ -560,11 +560,12 @@ useEffect(() => {
             {photos.map((_, index) => (
 
               <button
-                key={index}
+                key={_}
                 type="button"
                 className={`photoDot ${currentPhoto === index ? "active" : ""
                   }`}
                 onClick={() => goToPhoto(index)}
+                aria-label={`Go to slide ${index + 1}`}
               />
 
             ))}

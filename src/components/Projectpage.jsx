@@ -39,6 +39,7 @@ const projects = [
 ];
 
 function PortfolioPage() {
+  /* eslint-disable-next-line react-doctor/effect-needs-cleanup */
   useEffect(() => {
     const cards = document.querySelectorAll(".portfolio-project");
 

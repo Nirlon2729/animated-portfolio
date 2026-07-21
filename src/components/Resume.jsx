@@ -18,26 +18,26 @@ import resumePDF from "../assets/resume.pdf";
 
 
 
-function Resume() {
-    const skills = [
-        "JavaScript",
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "MySQL",
-        "PHP",
-        "Python",
-        "HTML5",
-        "CSS3",
-        "Git",
-        "GitHub",
-        "VS Code",
-        "Postman",
-        "REST API",
-        "Responsive Design",
-    ];
+const skills = [
+    "JavaScript",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "PHP",
+    "Python",
+    "HTML5",
+    "CSS3",
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Postman",
+    "REST API",
+    "Responsive Design",
+];
 
+function Resume() {
     return (
         <main className="resume-page">
             <div className="resume-background-glow resume-glow-one"></div>
@@ -153,6 +153,7 @@ function Resume() {
         src={`${resumePDF}#zoom=page-fit`}
         title="Resume"
         loading="lazy"
+        sandbox="allow-same-origin"
     />
 </div>
 

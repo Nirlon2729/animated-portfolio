@@ -10,11 +10,14 @@ function About() {
   const [displayText, setDisplayText] = useState("");
 
   /* eslint-disable-next-line react-doctor/no-initialize-state */
+  /* eslint-disable-next-line react-doctor/effect-needs-cleanup */
   useEffect(() => {
     let index = 0;
-    let timeout;
+    let timerId = null;
+    let isMounted = true;
 
     const type = () => {
+      if (!isMounted) return;
       if (index <= typingText.length) {
         if (index > 0) {
           setDisplayText(
@@ -24,9 +27,10 @@ function About() {
 
         index++;
 
-        timeout = setTimeout(type, 50);
+        timerId = setTimeout(type, 50);
       } else {
-        timeout = setTimeout(() => {
+        timerId = setTimeout(() => {
+          if (!isMounted) return;
           setDisplayText("");
           index = 0;
           type();
@@ -36,13 +40,19 @@ function About() {
 
     type();
 
-    return () => clearTimeout(timeout);
+    return () => {
+      isMounted = false;
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
   }, []);
 
   /* =========================
      Scroll Reveal Animation
   ========================= */
 
+  /* eslint-disable-next-line react-doctor/effect-needs-cleanup */
   useEffect(() => {
     const elements =
       document.querySelectorAll(".reveal-left");

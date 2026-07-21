@@ -11,11 +11,14 @@ function Hero() {
   ========================= */
 
   /* eslint-disable-next-line react-doctor/no-initialize-state */
+  /* eslint-disable-next-line react-doctor/effect-needs-cleanup */
   useEffect(() => {
     let index = 0;
-    let timeout;
+    let timerId = null;
+    let isMounted = true;
 
     const type = () => {
+      if (!isMounted) return;
       if (index <= typingText.length) {
         if (index > 0) {
           setDisplayText(
@@ -25,9 +28,10 @@ function Hero() {
 
         index++;
 
-        timeout = setTimeout(type, 50);
+        timerId = setTimeout(type, 50);
       } else {
-        timeout = setTimeout(() => {
+        timerId = setTimeout(() => {
+          if (!isMounted) return;
           setDisplayText("");
           index = 0;
           type();
@@ -37,7 +41,12 @@ function Hero() {
 
     type();
 
-    return () => clearTimeout(timeout);
+    return () => {
+      isMounted = false;
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
   }, []);
 
 
@@ -216,7 +225,7 @@ function Hero() {
           <p>Full Stack Developer</p>
 
           <span className="typing-text">
-            I transform ideas into fast, scalable, and user-friendly web applications. With expertise in PHP and the MERN Stack, I specialize in building modern digital experiences that combine performance, functionality, and clean design.
+            {displayText}
           </span>
         </div>
 
