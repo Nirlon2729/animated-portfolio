@@ -804,3 +804,70 @@ MOBILE
             display: none;
         }
     }
+    /* ===========================
+   Tablet (768px - 1024px)
+=========================== */
+@media (max-width: 1024px) {
+
+    .hero-typing-box{
+        width: 320px;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .hero-typing-text{
+        display: block;
+        width: 100%;
+        white-space: pre-line;
+        word-break: break-word;
+
+        font-family: "Cedarville Cursive", cursive;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.514);
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+    .hero-typing-text::after{
+        content: "|";
+        color: #8D0100;
+        font-weight: 700;
+        animation: blink .8s infinite;
+    }
+}
+
+
+/* ===========================
+   Mobile (767px and below)
+=========================== */
+@media (max-width: 767px) {
+
+    .hero-typing-box{
+        width: 100%;
+        max-width: 300px;
+        height: 230px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .hero-typing-text{
+        display: block;
+        width: 100%;
+        white-space: pre-line;
+        word-break: break-word;
+
+        font-family: "Cedarville Cursive", cursive;
+        line-height: 1.45;
+        color: rgba(0, 0, 0, 0.514);
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .hero-typing-text::after{
+        content: "|";
+        color: #8D0100;
+        font-weight: 700;
+        animation: blink .8s infinite;
+    }
+}
