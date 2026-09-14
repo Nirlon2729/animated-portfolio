@@ -1,13 +1,14 @@
 import "../css/certificatepage.css";
 import { useNavigate } from "react-router-dom";
-import cert1 from "/certificates/Coursera1.jpg";
-import cert2 from "/certificates/Coursera2.jpg";
-import cert3 from "/certificates/certi_1.png";
-import cert4 from "/certificates/certi_2.png";
-import cert5 from "/certificates/certi_3.png";
 
-import certi1 from "/certificates/ibm_1.png";
-import certi2 from "/certificates/ibm_2.png";
+const cert1 = "/certificates/Coursera1.jpg";
+const cert2 = "/certificates/Coursera2.jpg";
+const cert3 = "/certificates/certi_1.png";
+const cert4 = "/certificates/certi_2.png";
+const cert5 = "/certificates/certi_3.png";
+
+const certi1 = "/certificates/ibm_1.png";
+const certi2 = "/certificates/ibm_2.png";
 
 const certificates = [
     {
@@ -233,7 +234,7 @@ function CertificatePage() {
                                     rel="noopener noreferrer"
                                     className="certVerifyBtn"
                                 >
-                                🔗 View Credential / Verfy Certificate 
+                                🔗 View Credential / Verify Certificate 
                                 </a>
                             )}
                             <div className="certHighlights">

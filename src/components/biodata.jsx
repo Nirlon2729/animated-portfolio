@@ -121,10 +121,6 @@ function Biodata() {
     return () => clearInterval(interval);
   }, []);
 
-  /* ============================================================
-     PASTE PART 2 BELOW THIS COMMENT
-  ============================================================ */
-
   // ===========================
   // Component
   // ===========================
@@ -560,7 +556,7 @@ useEffect(() => {
             {photos.map((_, index) => (
 
               <button
-                key={_}
+                key={index}
                 type="button"
                 className={`photoDot ${currentPhoto === index ? "active" : ""
                   }`}
@@ -573,10 +569,6 @@ useEffect(() => {
           </div>
 
         </section>
-
-        {/* ======================================================
-    PASTE PART 3 (CSS) BELOW THIS COMMENT
-====================================================== */}
 
         {/* ===========================
             CLOSING QUOTE

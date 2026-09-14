@@ -24,7 +24,7 @@ const getReply = (message) => {
   }
 
   if (q.includes("skill")) {
-    return `I use React,MongoDB,Node.js,Express,PHP and MySQL`;
+    return `I use React, MongoDB, Node.js, Express, PHP, and MySQL.`;
   }
 
   if (q.includes("project")) {
@@ -47,7 +47,7 @@ const getReply = (message) => {
   }
 
   if (q.includes("freelance")) {
-    return `Yes! I'm available for the Freelancing. Let's connect and discuss your project. You can contact me by this email-nirlonmacwan27@gmailcom`;
+    return `Yes! I'm available for freelancing. Let's connect and discuss your project. You can contact me by email: nirlonmacwan27@gmail.com`;
   }
 
   if (q.includes("contact")) {
@@ -66,7 +66,7 @@ function ChatBot() {
     {
       id: "welcome-message",
       sender: "bot",
-      text: "Hi there!How can i help you today."
+      text: "Hi there! How can I help you today?"
     }
   ]);
 

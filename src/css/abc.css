@@ -490,7 +490,11 @@ DESCRIPTION
 BUTTON
 ================================== */
 
-.portfolio-content button{
+.portfolio-content .project-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
 
     width:fit-content;
 
@@ -512,7 +516,7 @@ BUTTON
     transition:.3s ease;
 }
 
-.portfolio-content button:hover{
+.portfolio-content .project-btn:hover{
 
     transform:
     translateY(-3px);
@@ -633,7 +637,7 @@ TABLET
 
 }
 
-.portfolio-content button{
+.portfolio-content .project-btn{
 
     padding:16px 34px;
 
@@ -795,7 +799,7 @@ MOBILE
 
 }
 
-.portfolio-content button{
+.portfolio-content .project-btn{
 
     width:100%;
 

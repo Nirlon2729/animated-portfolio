@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import "../css/about.css";
 import { Link } from "react-router-dom";
 import nirlon from "../assets/image/nirlon.jpg";
-import resume from "../assets/resume - Copy.pdf";
 
 function About() {
   const typingText =
-    "I'm a BCA Graduate and aspiring Full Stack Developer specializing in React.js, Node.js, Express.js, MongoDB, PHP and MySQL.I enjoy transforming ideas into modern digital products that are fast, scalable and visually engaging. My goal is to create impactful applications that combine performance, clean code, and exceptional user experiences.";
+    "I'm a BCA Graduate and aspiring Full Stack Developer specializing in React.js, Node.js, Express.js, MongoDB, PHP and MySQL. I enjoy transforming ideas into modern digital products that are fast, scalable and visually engaging. My goal is to create impactful applications that combine performance, clean code, and exceptional user experiences.";
   const [displayText, setDisplayText] = useState("");
 
   /* eslint-disable-next-line react-doctor/no-initialize-state */
@@ -135,10 +134,6 @@ function About() {
             <h3 className="abc">
               Full Stack Developer
             </h3>
-
-            <p>
-
-            </p>
 
             <div className="typing-container">
               <span className="typing-text">

@@ -45,33 +45,33 @@ function Footer() {
           <h3>SOCIAL LINKS</h3>
 
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/macwan_nirlon"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Instagram
           </a>
 
           <a
-            href="https://facebook.com"
+            href="https://facebook.com/nirlon.macwan.27"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Facebook
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/nirlon-macwan"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
 
           <a
-            href="https://github.com"
+            href="https://github.com/Nirlon2729"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>

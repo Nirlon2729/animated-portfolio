@@ -6,7 +6,6 @@ function Hero() {
   const typingText =
     "I transform ideas into fast, scalable, and user-friendly web applications. With expertise in PHP and the MERN Stack, I specialize in building modern digital experiences that combine performance, functionality, and clean design.";
   const [displayText, setDisplayText] = useState("");
-  const [typingFinished, setTypingFinished] = useState(false);
   /* =========================
      Typing Animation
   ========================= */
@@ -31,12 +30,9 @@ function Hero() {
 
         timerId = setTimeout(type, 50);
       } else {
-        setTypingFinished(true);
-
         timerId = setTimeout(() => {
           if (!isMounted) return;
 
-          setTypingFinished(false);
           setDisplayText("");
           index = 0;
           type();

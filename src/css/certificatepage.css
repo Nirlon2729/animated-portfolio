@@ -1,5 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+.certVerifyBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 11px;
+    padding: 11px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: #241801;
+}
 
+.certVerifyBtn:hover {
+    transform: translateY(-2px);
+}
+.certVerifyBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -5px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    background: rgba(232, 228, 228, 0.06);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.certVerifyBtn:hover {
+    transform: translateY(-3px);
+    background: rgba(33, 1, 1, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+}
 .certPremium{
   background:
   linear-gradient(

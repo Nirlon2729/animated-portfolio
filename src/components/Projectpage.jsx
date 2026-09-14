@@ -119,15 +119,20 @@ function PortfolioPage() {
 
               <p>{project.description}</p>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button type="button" className="project-btn">
+              {project.link && project.link !== "#" ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-btn"
+                >
+                  View Project ↗
+                </a>
+              ) : (
+                <button type="button" className="project-btn" disabled style={{ opacity: 0.6, cursor: "not-allowed" }}>
                   View Project
                 </button>
-              </a>
+              )}
             </div>
           </article>
         ))}
