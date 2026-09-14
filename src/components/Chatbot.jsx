@@ -14,11 +14,11 @@ const getReply = (message) => {
   const q = message.toLowerCase();
 
   if (q.includes("about")) {
-    return `I'm Nirlon Macwan, an MCA student and Full Stack Developer passionate about building modern and responsive web applications.`;
+    return `I'm Nirlon Macwan, a MCA student and Full Stack Developer passionate about building modern and responsive web applications.`;
   }
 
   if (
-    q.includes("technology")
+    q.includes("technologies")
   ) {
     return `React.js, JavaScript, Node.js, Express.js, MongoDB, PHP, MySQL, HTML, CSS, Git and GitHub.`;
   }
@@ -188,6 +188,28 @@ function ChatBot() {
             }
           >
             What technologies do you use?
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              sendMessage(
+                "Tell me your education"
+              )
+            }
+          >
+            Tell me about your education
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              sendMessage(
+                "Are you available for freelance?"
+              )
+            }
+          >
+            Tell me about Yourself
           </button>
 
           <button
