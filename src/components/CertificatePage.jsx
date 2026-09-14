@@ -247,8 +247,18 @@ function CertificatePage() {
 
                             <p>{cert.description}</p>
 
+                            {cert.highlights && cert.highlights.length > 0 && (
+                                <div className="certHighlights">
+                                    {cert.highlights.map((highlight, hIdx) => (
+                                        <div key={hIdx} className="certHighlight">
+                                            • {highlight}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
                             <div className={`certInfo ${cert.qr ? "hasQR" : "noQR"}`}>
-                                <div className="certDetails">
+                                <div className="certActionGroup">
                                     <div className="certMeta">
                                         <span>{cert.date}</span>
                                         <span>🏆 Certified</span>
