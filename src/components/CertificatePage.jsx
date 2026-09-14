@@ -6,10 +6,15 @@ const cert2 = "/certificates/Coursera2.jpg";
 const cert3 = "/certificates/certi_1.png";
 const cert4 = "/certificates/certi_2.png";
 const cert5 = "/certificates/certi_3.png";
-
 const certi1 = "/certificates/ibm_1.png";
 const certi2 = "/certificates/ibm_2.png";
 
+
+const qr1 = "/certificates/ibm_qr_1.jpeg";
+const qr2 = "/certificates/ibm_qr_2.jpeg";
+const qr3 = "/certificates/qr_3.png";
+const qr4 = "/certificates/qr_4.png";
+const qr7 = "/certificates/qr_7.png";
 const certificates = [
     {
         id: "01",
@@ -17,33 +22,49 @@ const certificates = [
         issuer: "IBM",
         date: "September 2026",
         image: certi1,
+        qr: qr1,
         link: "https://www.credly.com/badges/ee8e0d69-e688-45a2-aa44-a9788fd020b0",
         description:
-            "IBM SkillsBuild – Career Management Essentials: Completed a professional development program focused on career planning, professional branding, workplace readiness, and strategies for long-term career growth.",
+            "This credential earner demonstrates a thorough understanding of the resume creation and interview process. The individual knows how to research workplaces, build a professional social network brand, identify their skills, create a standout resume to bypass application tracking systems, and prepare for interviews. The earner has practiced using Al tools to enhance a resume and tailor it for different job roles.",
         skills: [
             "Career Development",
             "Career Management",
-            "Networking Skills",
             "Communication Skills",
+            "Workplace Skills",
+            "Workplace Research",
+            "Generative AI Tool Use",
+            "Networking Skills",
+            "Presentation Skills",
             "Professional Online Brand Development",
-            "Workplace Research"
+            "Social Media Presence",
+            "PWID-B0976200"
         ]
     },
     {
         id: "02",
-        title: "Python Basics: Selection and Iteration",
+        title: "AI Fundamentals: Foundations for Understanding AI",
         issuer: "Coursera",
         date: "January 2025",
         image: certi2,
+        qr: qr2,
         link: "https://www.credly.com/badges/e93ee3ce-ce12-4bde-bcd3-b434c45222d9/public_url",
         description:
-            "Successfully completed a comprehensive course focused on Python fundamentals, decision making, loops, iterative programming and problem-solving techniques. Built a strong foundation in computational thinking and algorithmic design.",
+            "This credential earner demonstrates foundational knowledge of artificial intelligence and its core technologies. The individual can explain Al concepts and capabilities, differentiate human learning from and machine learning, and describe types of machine learning, and explain how neural networks and deep learning function. The earner can identify forms of Al, consider Al ethics implications, and use Al tools responsibly to generate and refine solutions.",
         skills: [
-            "Python",
-            "Programming Logic",
-            "Loops",
-            "Conditionals",
-            "Problem Solving"
+            "AI Ethics",
+            "AI Forms and Users",
+            "AI Prompt Writing",
+            "Applications of AI",
+            "Artificial Intelligence(AI)",
+            "Bias Detection and Mitigation",
+            "Computer Vision AI",
+            "Critical Thinking",
+            "Deep Learning",
+            "Genrative AI",
+            "Machine Learning",
+            "Neural Networks",
+            "PWID-B1038700"
+
         ]
     },
     {
@@ -52,7 +73,8 @@ const certificates = [
         issuer: "Coursera",
         date: "January 2025",
         image: cert1,
-        link: "",
+        qr: qr3,
+        link: "https://www.coursera.org/account/accomplishments/verify/H81578NO87OX",
         description:
             "Successfully completed a comprehensive course focused on Python fundamentals, decision making, loops, iterative programming and problem-solving techniques. Built a strong foundation in computational thinking and algorithmic design.",
         skills: [
@@ -70,7 +92,8 @@ const certificates = [
         issuer: "Coursera",
         date: "January 2025",
         image: cert2,
-        link: "",
+        qr: qr4,
+        link: "https://www.coursera.org/account/accomplishments/verify/L3PAM6HL06NJ",
         description:
             "Learned essential Python data structures and file handling concepts. Developed practical skills for working with strings, lists, text processing and real-world data management tasks.",
         skills: [
@@ -146,7 +169,8 @@ const certificates = [
         issuer: "NIED Foundation",
         date: "July 2023",
         image: cert5,
-        link: "",
+        qr: qr7,
+        link: "https://www.nied.co.in/verify-student?reg_no=NIED2301275506GJ",
         description:
             "Completed a skill development initiative focused on digital literacy, computer operations and foundational technical knowledge, earning Grade A certification.",
         skills: [
@@ -223,33 +247,47 @@ function CertificatePage() {
 
                             <p>{cert.description}</p>
 
-                            <div className="certMeta">
-                                <span> {cert.date}</span>
-                                <span>🏆 Certified</span>
-                            </div>
-                            {cert.link && (
-                                <a
-                                    href={cert.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="certVerifyBtn"
-                                >
-                                🔗 View Credential / Verify Certificate 
-                                </a>
-                            )}
-                            <div className="certHighlights">
-                                {cert.highlights?.map((item) => (
-                                    <div key={item} className="certHighlight">
-                                        ✓ {item}
+                            <div className={`certInfo ${cert.qr ? "hasQR" : "noQR"}`}>
+                                <div className="certDetails">
+                                    <div className="certMeta">
+                                        <span>{cert.date}</span>
+                                        <span>🏆 Certified</span>
                                     </div>
-                                ))}
+
+                                    {cert.link && (
+                                        <a
+                                            href={cert.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="certVerifyBtn"
+                                        >
+                                            🔗 View Credential / Verify Certificate
+                                        </a>
+                                    )}
+                                </div>
+
+                                {cert.qr && (
+                                    <div className="certQR">
+                                        <img
+                                            src={cert.qr}
+                                            alt="Scan to verify certificate"
+                                        />
+                                        <span>Scan to Verify<br />Certificate</span>
+                                    </div>
+                                )}
                             </div>
+                            
+
                             <div className="certSkills">
-                                {cert.skills.map((skill) => (
-                                    <span key={skill}>
-                                        {skill}
-                                    </span>
-                                ))}
+                                <h4>Skills That I Learned!</h4>
+
+                                <div className="skillsList">
+                                    {cert.skills.map((skill) => (
+                                        <span key={skill}>
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
                         </div>
