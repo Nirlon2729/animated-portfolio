@@ -1,12 +1,14 @@
 import "../css/certificatepage.css";
 import { useNavigate } from "react-router-dom";
-import cert1 from "../assets/image/certi/Coursera1.jpg";
-import cert2 from "../assets/image/certi/Coursera2.jpg";
-import cert3 from "../assets/image/certi/certi_1.png";
-import cert4 from "../assets/image/certi/certi_2.png";
-import cert5 from "../assets/image/certi/certi_3.png";
-const certi1 = "/certificates/ibm_1.png";
-const certi2 = "/certificates/ibm_2.png";
+import cert1 from "/certificates/Coursera1.jpg";
+import cert2 from "/certificates/Coursera2.jpg";
+import cert3 from "/certificates/certi_1.png";
+import cert4 from "/certificates/certi_2.png";
+import cert5 from "/certificates/certi_3.png";
+
+import certi1 from "/certificates/ibm_1.png";
+import certi2 from "/certificates/ibm_2.png";
+
 const certificates = [
     {
         id: "01",
@@ -32,7 +34,7 @@ const certificates = [
         issuer: "Coursera",
         date: "January 2025",
         image: certi2,
-        link: "https://www.credly.com/badges/ee8e0d69-e688-45a2-aa44-a9788fd020b0",
+        link: "https://www.credly.com/badges/e93ee3ce-ce12-4bde-bcd3-b434c45222d9/public_url",
         description:
             "Successfully completed a comprehensive course focused on Python fundamentals, decision making, loops, iterative programming and problem-solving techniques. Built a strong foundation in computational thinking and algorithmic design.",
         skills: [
