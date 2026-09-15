@@ -10,10 +10,14 @@ const cert5 = "/certificates/certi_3.png";
 const certi1 = "/certificates/ibm_1.png";
 const certi2 = "/certificates/ibm_2.png";
 const certi3 = "/certificates/ibm_3.jpg";
+const certi4 = "/certificates/ibm_4.jpg";
+const certi5 = "/certificates/ibm_5.jpg";
 
 const qr1 = "/certificates/ibm_qr_1.jpeg";
 const qr2 = "/certificates/ibm_qr_2.jpeg";
 const ibm_qr3 = "/certificates/ibm_qr_3.jpeg";
+const ibm_qr4 = "/certificates/ibm_qr_4.jpeg";
+const ibm_qr5 = "/certificates/ibm_qr_4.jpeg";
 const qr3 = "/certificates/qr_3.png";
 const qr4 = "/certificates/qr_4.png";
 const qr7 = "/certificates/qr_7.png";
@@ -95,6 +99,59 @@ const certificates = [
     },
     {
         id: "04",
+        title: "AI Literacy",
+        issuer: "IBM",
+        date: "September 2026",
+        image: certi4,
+        qr: ibm_qr4,
+        link: "https://www.credly.com/badges/23cb0d37-3112-4aed-82fa-61f384df386f/public_url",
+        description:
+            "This credential earner demonstrates foundational knowledge of artificial intelligence. The individual can describe how AI works; explain AI concepts, forms, and enabling technologies; weigh the benefits and risks of AI; discuss principles of AI ethics; and recognize applications of AI in everyday life and work and across industries. The earner has practiced using AI to help solve data challenges and interacted with AI interfaces to create and refine simple business solutions.",
+        skills: [
+            "AI Capabilities and Limitations",
+            "AI Ethics",
+            "AI Literacy",
+            "AI Prompt Writing",
+            "Applications of AI",
+            "Artificial Intelligence(AI)",
+            "Bias Detection and Mitigation",
+            "Collaboration with AI Assistants",
+            "Critical Thinking",
+            "Data Literacy",
+            "Decision Making",
+            "Generative AI Use",
+            "Interacting with AI",
+            "Pattern Recognition",
+            "Problem Solving",
+            "Responsible Ai"
+        ]
+    },
+    {
+        id: "05",
+        title: "Career Management Essentials",
+        issuer: "IBM",
+        date: "September 2026",
+        image: certi5,
+        qr: ibm_qr5,
+        link: "https://www.credly.com/badges/163c9392-0e8f-4622-9c21-abc02c477168/public_url",
+        description:
+            "This credential earner has the technical knowledge and practical skills to build an AI agent using IBM watsonx.ai and optimize the performance of an AI agent. The individual can classify AI agents based on their decision-making approach and describe the steps to structure an AI agent workflow. The earner can identify the appropriate evaluation metrics for an AI agent and explain the key considerations for deploying and maintaining AI agents.",
+        skills: [
+            "AI Agent Workflow",
+            "AI Agents",
+            "AI Ethics",
+            "Agent Deployment Lifecycle",
+            "Agentic AI",
+            "Artificial Intelligence Applications",
+            "Critical Thinking",
+            "Evaluation Metrics",
+            "Generative AI",
+            "IBM Watsonx.ai",
+            "Problem Solving"
+        ]
+    },
+    {
+        id: "06",
         title: "Python Basics: Selection and Iteration",
         issuer: "Coursera",
         date: "January 2025",
@@ -113,7 +170,7 @@ const certificates = [
     },
 
     {
-        id: "05",
+        id: "07",
         title: "Python Structures: Lists, Strings & Files",
         issuer: "Coursera",
         date: "January 2025",
@@ -132,7 +189,7 @@ const certificates = [
     },
 
     {
-        id: "06",
+        id: "08",
         title: "Computer Concepts Course (CCC)",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
@@ -161,7 +218,7 @@ const certificates = [
     },
 
     {
-        id: "07",
+        id: "09",
         title: "Programming in C",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
@@ -190,7 +247,7 @@ const certificates = [
     },
 
     {
-        id: "08",
+        id: "10",
         title: "Kaushal Nidhi E-Shiksha Yojana",
         issuer: "NIED Foundation",
         date: "July 2023",
