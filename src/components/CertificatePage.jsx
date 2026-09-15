@@ -1,5 +1,6 @@
 import "../css/certificatepage.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const cert1 = "/certificates/Coursera1.jpg";
 const cert2 = "/certificates/Coursera2.jpg";
@@ -8,10 +9,11 @@ const cert4 = "/certificates/certi_2.png";
 const cert5 = "/certificates/certi_3.png";
 const certi1 = "/certificates/ibm_1.png";
 const certi2 = "/certificates/ibm_2.png";
-
+const certi3 = "/certificates/ibm_3.jpg";
 
 const qr1 = "/certificates/ibm_qr_1.jpeg";
 const qr2 = "/certificates/ibm_qr_2.jpeg";
+const ibm_qr3 = "/certificates/ibm_qr_3.jpeg";
 const qr3 = "/certificates/qr_3.png";
 const qr4 = "/certificates/qr_4.png";
 const qr7 = "/certificates/qr_7.png";
@@ -23,7 +25,7 @@ const certificates = [
         date: "September 2026",
         image: certi1,
         qr: qr1,
-        link: "https://www.credly.com/badges/ee8e0d69-e688-45a2-aa44-a9788fd020b0",
+        link: "https://www.credly.com/badges/ee8e0d69-e688-45a2-aa44-a9788fd020b0/public_url",
         description:
             "This credential earner demonstrates a thorough understanding of the resume creation and interview process. The individual knows how to research workplaces, build a professional social network brand, identify their skills, create a standout resume to bypass application tracking systems, and prepare for interviews. The earner has practiced using Al tools to enhance a resume and tailor it for different job roles.",
         skills: [
@@ -36,8 +38,7 @@ const certificates = [
             "Networking Skills",
             "Presentation Skills",
             "Professional Online Brand Development",
-            "Social Media Presence",
-            "PWID-B0976200"
+            "Social Media Presence"
         ]
     },
     {
@@ -62,17 +63,42 @@ const certificates = [
             "Deep Learning",
             "Genrative AI",
             "Machine Learning",
-            "Neural Networks",
-            "PWID-B1038700"
+            "Neural Networks"
 
         ]
     },
     {
         id: "03",
+        title: "Career Management Essentials",
+        issuer: "IBM",
+        date: "September 2026",
+        image: certi3,
+        qr: ibm_qr3,
+        link: "https://www.credly.com/badges/7532ab72-1fb2-4802-bb54-ed160e9dfbc3/public_url",
+        description:
+            "This credential earner demonstrates knowledge of cloud computing, including cloud services, deployment models, virtualization, orchestration, and cloud security. The individual is aware of cloud benefits for users and businesses. The individual has a conceptual understanding of how to create a container, deploy a web app to the cloud, and analyze security in a simulated environment. The earner is aware of the job outlook in cloud computing and the skills required for success in various roles.",
+        skills: [
+            "Cloud Computing",
+            "Cloud Infrastructure",
+            "Cloud Migration",
+            "Containers",
+            "Docker",
+            "Hybrid Cloud",
+            "Infrastructure As A Service (IaaS)",
+            "Platform As A Service (PaaS)",
+            "Software As A Service (SaaS)",
+            "Private Cloud",
+            "Public Cloud",
+            "Virtualization",
+            "Visual Studio Code"
+        ]
+    },
+    {
+        id: "04",
         title: "Python Basics: Selection and Iteration",
         issuer: "Coursera",
         date: "January 2025",
-        image: cert1,
+        image: cert2,
         qr: qr3,
         link: "https://www.coursera.org/account/accomplishments/verify/H81578NO87OX",
         description:
@@ -87,11 +113,11 @@ const certificates = [
     },
 
     {
-        id: "04",
+        id: "05",
         title: "Python Structures: Lists, Strings & Files",
         issuer: "Coursera",
         date: "January 2025",
-        image: cert2,
+        image: cert1,
         qr: qr4,
         link: "https://www.coursera.org/account/accomplishments/verify/L3PAM6HL06NJ",
         description:
@@ -106,7 +132,7 @@ const certificates = [
     },
 
     {
-        id: "05",
+        id: "06",
         title: "Computer Concepts Course (CCC)",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
@@ -135,7 +161,7 @@ const certificates = [
     },
 
     {
-        id: "06",
+        id: "07",
         title: "Programming in C",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
@@ -164,7 +190,7 @@ const certificates = [
     },
 
     {
-        id: "07",
+        id: "08",
         title: "Kaushal Nidhi E-Shiksha Yojana",
         issuer: "NIED Foundation",
         date: "July 2023",
@@ -183,6 +209,8 @@ const certificates = [
 
 function CertificatePage() {
     const navigate = useNavigate();
+
+    const [selectedCertificate, setSelectedCertificate] = useState(null);
 
     const handleBack = () => {
         navigate("/#ftitle");
@@ -276,17 +304,35 @@ function CertificatePage() {
                                     )}
                                 </div>
 
+                                
                                 {cert.qr && (
-                                    <div className="certQR">
+                                    <div
+                                        className="certQR"
+                                        onClick={() => setSelectedCertificate(cert)}
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter" || e.key === " ") {
+                                                setSelectedCertificate(cert);
+                                            }
+                                        }}
+                                    >
                                         <img
                                             src={cert.qr}
                                             alt="Scan to verify certificate"
                                         />
-                                        <span>Scan to Verify<br />Certificate</span>
+
+                                        <span>
+                                            Scan to Verify
+                                            <br />
+                                            Certificate
+                                        </span>
                                     </div>
                                 )}
+                              
+
                             </div>
-                            
+
 
                             <div className="certSkills">
                                 <h4>Skills That I Learned!</h4>
@@ -315,7 +361,39 @@ function CertificatePage() {
                 ))}
 
             </div>
+            
 
+            {/* QR CODE POPUP */}
+            {selectedCertificate && selectedCertificate.qr && (
+                <div
+                    className="qrModal"
+                    onClick={() => setSelectedCertificate(null)}
+                >
+                    <div
+                        className="qrModalContent"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            className="qrModalClose"
+                            onClick={() => setSelectedCertificate(null)}
+                            aria-label="Close QR code"
+                        >
+                            ×
+                        </button>
+
+                        <img
+                            src={selectedCertificate.qr}
+                            alt="Certificate verification QR code"
+                        />
+
+                        <span>
+                            Scan to Verify Certificate
+                        </span>
+                    </div>
+                </div>
+            )}
+
+       
         </section>
     );
 }
