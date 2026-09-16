@@ -21,6 +21,14 @@ const ibm_qr5 = "/certificates/ibm_qr_4.jpeg";
 const qr3 = "/certificates/qr_3.png";
 const qr4 = "/certificates/qr_4.png";
 const qr7 = "/certificates/qr_7.png";
+
+const l1 = "/certificates/logo/l1.png";
+const l2 = "/certificates/logo/l2.png";
+const l3 = "/certificates/logo/l3.png";
+const l4 = "/certificates/logo/l4.png";
+const l5 = "/certificates/logo/l5.png";
+
+
 const certificates = [
     {
         id: "01",
@@ -29,6 +37,8 @@ const certificates = [
         date: "September 2026",
         image: certi1,
         qr: qr1,
+        logo: l1,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-B7F68A410C9C",
         link: "https://www.credly.com/badges/ee8e0d69-e688-45a2-aa44-a9788fd020b0/public_url",
         description:
             "This credential earner demonstrates a thorough understanding of the resume creation and interview process. The individual knows how to research workplaces, build a professional social network brand, identify their skills, create a standout resume to bypass application tracking systems, and prepare for interviews. The earner has practiced using Al tools to enhance a resume and tailor it for different job roles.",
@@ -52,6 +62,8 @@ const certificates = [
         date: "January 2025",
         image: certi2,
         qr: qr2,
+        logo: l2,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-56705048DB3F",
         link: "https://www.credly.com/badges/e93ee3ce-ce12-4bde-bcd3-b434c45222d9/public_url",
         description:
             "This credential earner demonstrates foundational knowledge of artificial intelligence and its core technologies. The individual can explain Al concepts and capabilities, differentiate human learning from and machine learning, and describe types of machine learning, and explain how neural networks and deep learning function. The earner can identify forms of Al, consider Al ethics implications, and use Al tools responsibly to generate and refine solutions.",
@@ -73,11 +85,13 @@ const certificates = [
     },
     {
         id: "03",
-        title: "Career Management Essentials",
+        title: "Cloud Computing Fundamentals",
         issuer: "IBM",
         date: "September 2026",
         image: certi3,
         qr: ibm_qr3,
+        logo: l3,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-2EC3A305F2C3",
         link: "https://www.credly.com/badges/7532ab72-1fb2-4802-bb54-ed160e9dfbc3/public_url",
         description:
             "This credential earner demonstrates knowledge of cloud computing, including cloud services, deployment models, virtualization, orchestration, and cloud security. The individual is aware of cloud benefits for users and businesses. The individual has a conceptual understanding of how to create a container, deploy a web app to the cloud, and analyze security in a simulated environment. The earner is aware of the job outlook in cloud computing and the skills required for success in various roles.",
@@ -104,6 +118,8 @@ const certificates = [
         date: "September 2026",
         image: certi4,
         qr: ibm_qr4,
+        logo: l4,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-1C903152880C",
         link: "https://www.credly.com/badges/23cb0d37-3112-4aed-82fa-61f384df386f/public_url",
         description:
             "This credential earner demonstrates foundational knowledge of artificial intelligence. The individual can describe how AI works; explain AI concepts, forms, and enabling technologies; weigh the benefits and risks of AI; discuss principles of AI ethics; and recognize applications of AI in everyday life and work and across industries. The earner has practiced using AI to help solve data challenges and interacted with AI interfaces to create and refine simple business solutions.",
@@ -128,11 +144,13 @@ const certificates = [
     },
     {
         id: "05",
-        title: "Career Management Essentials",
+        title: "Build an AI Agent",
         issuer: "IBM",
         date: "September 2026",
         image: certi5,
         qr: ibm_qr5,
+        logo: l5,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-485AD4195FE9",
         link: "https://www.credly.com/badges/163c9392-0e8f-4622-9c21-abc02c477168/public_url",
         description:
             "This credential earner has the technical knowledge and practical skills to build an AI agent using IBM watsonx.ai and optimize the performance of an AI agent. The individual can classify AI agents based on their decision-making approach and describe the steps to structure an AI agent workflow. The earner can identify the appropriate evaluation metrics for an AI agent and explain the key considerations for deploying and maintaining AI agents.",
@@ -361,33 +379,60 @@ function CertificatePage() {
                                     )}
                                 </div>
 
-                                
-                                {cert.qr && (
-                                    <div
-                                        className="certQR"
-                                        onClick={() => setSelectedCertificate(cert)}
-                                        role="button"
-                                        tabIndex={0}
-                                        onKeyDown={(e) => {
-                                            if (e.key === "Enter" || e.key === " ") {
-                                                setSelectedCertificate(cert);
-                                            }
-                                        }}
-                                    >
-                                        <img
-                                            src={cert.qr}
-                                            alt="Scan to verify certificate"
-                                        />
+                                <div className="certVisuals">
 
-                                        <span>
-                                            Scan to Verify
-                                            <br />
-                                            Certificate
-                                        </span>
-                                    </div>
-                                )}
-                              
+                                    {cert.logo && (
 
+                                        <div className="certLogo">
+                                            <a
+                                                href={cert.logolink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            ><span className="certLogoText">
+                                                    Course
+                                                </span>
+                                                <img
+                                                    src={cert.logo}
+                                                    alt="Certificate logo"
+                                                />
+
+                                                
+
+                                                <small className="certLogoClick">
+                                                    Click
+                                                </small>
+                                            </a>
+                                        </div>
+
+
+                                    )}
+
+                                    {cert.qr && (
+                                        <div
+                                            className="certQR"
+                                            onClick={() => setSelectedCertificate(cert)}
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                                if (e.key === "Enter" || e.key === " ") {
+                                                    setSelectedCertificate(cert);
+                                                }
+                                            }}
+                                        >
+                                            <img
+                                                src={cert.qr}
+                                                alt="Scan to verify certificate"
+                                            />
+
+                                            <span>
+                                                Scan to Verify
+                                                <br />
+                                                Certificate
+                                            </span>
+                                        </div>
+                                    )}
+
+                                </div>
                             </div>
 
 
@@ -418,7 +463,7 @@ function CertificatePage() {
                 ))}
 
             </div>
-            
+
 
             {/* QR CODE POPUP */}
             {selectedCertificate && selectedCertificate.qr && (
@@ -450,7 +495,7 @@ function CertificatePage() {
                 </div>
             )}
 
-       
+
         </section>
     );
 }
