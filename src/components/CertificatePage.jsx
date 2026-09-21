@@ -7,19 +7,23 @@ const cert2 = "/certificates/Coursera2.jpg";
 const cert3 = "/certificates/certi_1.png";
 const cert4 = "/certificates/certi_2.png";
 const cert5 = "/certificates/certi_3.png";
+const cert6 = "/certificates/certi_4.png";
 const certi1 = "/certificates/ibm_1.png";
 const certi2 = "/certificates/ibm_2.png";
 const certi3 = "/certificates/ibm_3.jpg";
 const certi4 = "/certificates/ibm_4.jpg";
 const certi5 = "/certificates/ibm_5.jpg";
+const certi6 = "/certificates/ibm_6.png";
 
 const qr1 = "/certificates/ibm_qr_1.jpeg";
 const qr2 = "/certificates/ibm_qr_2.jpeg";
 const ibm_qr3 = "/certificates/ibm_qr_3.jpeg";
 const ibm_qr4 = "/certificates/ibm_qr_4.jpeg";
-const ibm_qr5 = "/certificates/ibm_qr_4.jpeg";
+const ibm_qr5 = "/certificates/ibm_qr_5.jpeg";
+const ibm_qr6 = "/certificates/ibm_qr_6.jpeg";
 const qr3 = "/certificates/qr_3.png";
 const qr4 = "/certificates/qr_4.png";
+const qr5 = "/certificates/qr_5.png";
 const qr7 = "/certificates/qr_7.png";
 
 const l1 = "/certificates/logo/l1.png";
@@ -27,13 +31,15 @@ const l2 = "/certificates/logo/l2.png";
 const l3 = "/certificates/logo/l3.png";
 const l4 = "/certificates/logo/l4.png";
 const l5 = "/certificates/logo/l5.png";
+const l6 = "/certificates/logo/l6.png";
 
 
 const certificates = [
     {
         id: "01",
         title: "Career Management Essentials",
-        issuer: "IBM",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
         date: "September 2026",
         image: certi1,
         qr: qr1,
@@ -58,7 +64,8 @@ const certificates = [
     {
         id: "02",
         title: "AI Fundamentals: Foundations for Understanding AI",
-        issuer: "Coursera",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
         date: "January 2025",
         image: certi2,
         qr: qr2,
@@ -86,7 +93,8 @@ const certificates = [
     {
         id: "03",
         title: "Cloud Computing Fundamentals",
-        issuer: "IBM",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
         date: "September 2026",
         image: certi3,
         qr: ibm_qr3,
@@ -114,7 +122,8 @@ const certificates = [
     {
         id: "04",
         title: "AI Literacy",
-        issuer: "IBM",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
         date: "September 2026",
         image: certi4,
         qr: ibm_qr4,
@@ -145,7 +154,8 @@ const certificates = [
     {
         id: "05",
         title: "Build an AI Agent",
-        issuer: "IBM",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
         date: "September 2026",
         image: certi5,
         qr: ibm_qr5,
@@ -170,7 +180,62 @@ const certificates = [
     },
     {
         id: "06",
+        title: "Cybersecurity Fundamentals",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
+        issuer: "IBM SkillsBuild",
+        date: "September 2026",
+        image: certi6,
+        qr: ibm_qr6,
+        logo: l6,
+        logolink: "https://skills.yourlearning.ibm.com/activity/PLAN-485AD4195FE9",
+        link: "https://www.credly.com/badges/caa9a5d3-2f43-4cf4-a0af-6900460fe564/public_url",
+        description:
+            "This credential earner demonstrates a foundational understanding of cybersecurity concepts, objectives, and practices. This includes cyber threat groups, types of attacks, social engineering, case studies, overall security strategies, cryptography, and common approaches that organizations take to prevent, detect, and respond to cyber attacks. This also includes an awareness of the job market. Earners can use this knowledge to pursue further education for a variety of roles in cybersecurity.",
+        skills: [
+            "Cryptography",
+            "Cyber Attacks",
+            "Cyber Threat Analysis",
+            "Cyber Threat Intelligence",
+            "CyberSecurity",
+            "CyberSecurity Processes",
+            "Cybersecurity Risk Management",
+            "Incident Response",
+            "Information Security",
+            "Security Strategies",
+            "Social Engineering",
+            "Therat Analysis",
+            "Threat Detection",
+            "Vulnerability Management"
+        ]
+    },
+     {
+        id: "07",
+        title: "Introduction to Generative AI",
+        issuerwebsite: "https://www.simplilearn.com/free-generative-ai-course-skillup",
+        issuer: "SimpliLearn | SkillUP",
+        date: "September 2026",
+        image: cert6,
+        qr: qr5,
+        logo: "",
+        logolink: "",
+        link: "https://simpli-web.app.link/e/8SDXrtDlC6b",
+        description:
+            "Dive into the world where algorithms write text, create images, and compose music. This generative AI course free with certificate covers practical applications reshaping healthcare, education, and business. No technical background needed just curiosity and a willingness to explore what AI can create.",
+        skills: [
+            "Introduction to Generative AI",
+            "Generative AI Models and Architecture",
+            "Gen AI Applications",
+            "AI Content Generation",
+            "Responsible AI",
+            "Ethical Considerations",
+            "AI Limitations and Challenges",
+            "Future Trends in Generative AI"
+        ]
+    },
+    {
+        id: "08",
         title: "Python Basics: Selection and Iteration",
+        issuerwebsite: "https://www.coursera.org/",
         issuer: "Coursera",
         date: "January 2025",
         image: cert2,
@@ -188,8 +253,9 @@ const certificates = [
     },
 
     {
-        id: "07",
+        id: "09",
         title: "Python Structures: Lists, Strings & Files",
+        issuerwebsite: "https://www.coursera.org/",
         issuer: "Coursera",
         date: "January 2025",
         image: cert1,
@@ -207,8 +273,9 @@ const certificates = [
     },
 
     {
-        id: "08",
+        id: "10",
         title: "Computer Concepts Course (CCC)",
+        issuerwebsite: "",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
         image: cert3,
@@ -236,8 +303,9 @@ const certificates = [
     },
 
     {
-        id: "09",
+        id: "11",
         title: "Programming in C",
+        issuerwebsite: "",
         issuer: "JanKalyan Computer Saksharta Mission",
         date: "July 2023",
         image: cert4,
@@ -265,8 +333,9 @@ const certificates = [
     },
 
     {
-        id: "10",
+        id: "12",
         title: "Kaushal Nidhi E-Shiksha Yojana",
+        issuerwebsite: "https://skills.yourlearning.ibm.com/",
         issuer: "NIED Foundation",
         date: "July 2023",
         image: cert5,
@@ -343,7 +412,7 @@ function CertificatePage() {
                             </div>
 
                             <span className="certIssuer">
-                                {cert.issuer}
+                               <a href={cert.issuerwebsite}>{cert.issuer}</a>
                             </span>
 
                             <h2>{cert.title}</h2>
