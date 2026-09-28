@@ -756,34 +756,58 @@
     font-size: 0.85rem;
   }
 
-  /* Horizontal compact layout for QR code on mobile */
-  .certQR {
-    width: 100%;
-    max-width: 240px;
-    align-self: center;
-    flex-direction: row;
+ .certInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 14px;
-    padding: 10px 16px;
+    width: 100%;
+    margin: 18px 0;
+  }
+
+  .certQR {
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    padding: 8px 14px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
     box-sizing: border-box;
-    justify-content: flex-start;
   }
 
   .certQR img {
-    width: 65px;
-    height: 65px;
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    object-fit: contain;
+    display: block;
+    border-radius: 5px;
   }
 
   .certQR span {
-    margin-top: 0;
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #475569;
     text-align: left;
-    font-size: 0.78rem;
-  }
-
-  .skillsList span {
-    padding: 6px 12px;
-    font-size: 0.78rem;
+    white-space: nowrap;
   }
 }
+
 
 /* Small Phones (<= 480px) */
 @media (max-width: 480px) {
