@@ -1,6 +1,6 @@
 import "../css/certificatepage.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const cert1 = "/certificates/Coursera1.jpg";
 const cert2 = "/certificates/Coursera2.jpg";
@@ -208,7 +208,7 @@ const certificates = [
             "Vulnerability Management"
         ]
     },
-     {
+    {
         id: "07",
         title: "Introduction to Generative AI",
         issuerwebsite: "https://www.simplilearn.com/free-generative-ai-course-skillup",
@@ -356,6 +356,13 @@ function CertificatePage() {
 
     const [selectedCertificate, setSelectedCertificate] = useState(null);
 
+    useEffect(() => {
+        certificates.forEach((cert) => {
+            const img = new Image();
+            img.src = cert.image;
+        });
+    }, []);
+
     const handleBack = () => {
         navigate("/#ftitle");
     };
@@ -412,7 +419,7 @@ function CertificatePage() {
                             </div>
 
                             <span className="certIssuer">
-                               <a href={cert.issuerwebsite}>{cert.issuer}</a>
+                                <a href={cert.issuerwebsite}>{cert.issuer}</a>
                             </span>
 
                             <h2>{cert.title}</h2>
@@ -465,7 +472,7 @@ function CertificatePage() {
                                                     alt="Certificate logo"
                                                 />
 
-                                                
+
 
                                                 <small className="certLogoClick">
                                                     Click
@@ -523,7 +530,8 @@ function CertificatePage() {
                             <img
                                 src={cert.image}
                                 alt={cert.title}
-                                fetchPriority="high"
+                                loading="eager"
+                                decoding="async"
                             />
                         </div>
 

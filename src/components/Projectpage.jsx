@@ -96,7 +96,8 @@ function PortfolioPage() {
               <img
                 src={project.image}
                 alt={project.title}
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 

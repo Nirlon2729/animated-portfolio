@@ -13,6 +13,13 @@ import "../css/ChatBot.css";
 const getReply = (message) => {
   const q = message.toLowerCase();
 
+if (
+  q.includes("hi") || 
+(q.includes("hello"))
+){
+    return `Hello, I'm Nirlon's ChatBot, How may I help you!!!`;
+  }
+
   if (q.includes("about")) {
     return `I'm Nirlon Macwan, a MCA student and Full Stack Developer passionate about building modern and responsive web applications.`;
   }
@@ -205,7 +212,7 @@ function ChatBot() {
             type="button"
             onClick={() =>
               sendMessage(
-                "Are you available for freelance?"
+                "Tell me about Yourself"
               )
             }
           >

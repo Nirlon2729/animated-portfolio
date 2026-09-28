@@ -239,6 +239,9 @@ function Hero() {
                 id="heroImage"
                 src="/image/ni.png"
                 alt="Profile"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
