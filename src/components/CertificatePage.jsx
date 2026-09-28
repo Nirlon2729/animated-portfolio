@@ -8,6 +8,7 @@ const cert3 = "/certificates/certi_1.png";
 const cert4 = "/certificates/certi_2.png";
 const cert5 = "/certificates/certi_3.png";
 const cert6 = "/certificates/certi_4.png";
+const cert7 = "/certificates/certi_5.png";
 const certi1 = "/certificates/ibm_1.png";
 const certi2 = "/certificates/ibm_2.png";
 const certi3 = "/certificates/ibm_3.jpg";
@@ -24,6 +25,7 @@ const ibm_qr6 = "/certificates/ibm_qr_6.jpeg";
 const qr3 = "/certificates/qr_3.png";
 const qr4 = "/certificates/qr_4.png";
 const qr5 = "/certificates/qr_5.png";
+const qr6 = "/certificates/qr_6.png";
 const qr7 = "/certificates/qr_7.png";
 
 const l1 = "/certificates/logo/l1.png";
@@ -32,7 +34,7 @@ const l3 = "/certificates/logo/l3.png";
 const l4 = "/certificates/logo/l4.png";
 const l5 = "/certificates/logo/l5.png";
 const l6 = "/certificates/logo/l6.png";
-
+const l7 = "/certificates/logo/l7.png";
 
 const certificates = [
     {
@@ -234,6 +236,32 @@ const certificates = [
     },
     {
         id: "08",
+        title: "Machine Learning Using Python",
+        issuerwebsite: "https://www.simplilearn.com/free-generative-ai-course-skillup",
+        issuer: "SimpliLearn | SkillUP",
+        date: "September 2026",
+        image: cert7,
+        qr: qr6,
+        logo: l7,
+        logolink: "https://www.simplilearn.com/learn-machine-learning-basics-skillup",
+        link: "https://simpli-web.app.link/e/I2mD3zBKI6b",
+        description:
+            "Completed a certification in **Machine Learning Using Python**, gaining practical knowledge of machine learning concepts and their implementation using Python. The certification strengthened my understanding of data-driven problem solving and building machine learning solutions.",
+        skills: [
+            "Python Programming",
+            "Machine Learning Fundamentals",
+            "Data Preprocessing",
+            "Feature Engineering",
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Model Training and Evaluation",
+            "Machine Learning Algorithms",
+            "Predictive Modeling",
+            "Data-Driven Problem Solving"
+        ]
+    },
+    {
+        id: "09",
         title: "Python Basics: Selection and Iteration",
         issuerwebsite: "https://www.coursera.org/",
         issuer: "Coursera",
@@ -253,7 +281,7 @@ const certificates = [
     },
 
     {
-        id: "09",
+        id: "10",
         title: "Python Structures: Lists, Strings & Files",
         issuerwebsite: "https://www.coursera.org/",
         issuer: "Coursera",
@@ -273,7 +301,7 @@ const certificates = [
     },
 
     {
-        id: "10",
+        id: "11",
         title: "Computer Concepts Course (CCC)",
         issuerwebsite: "",
         issuer: "JanKalyan Computer Saksharta Mission",
@@ -303,7 +331,7 @@ const certificates = [
     },
 
     {
-        id: "11",
+        id: "12",
         title: "Programming in C",
         issuerwebsite: "",
         issuer: "JanKalyan Computer Saksharta Mission",
@@ -333,7 +361,7 @@ const certificates = [
     },
 
     {
-        id: "12",
+        id: "13",
         title: "Kaushal Nidhi E-Shiksha Yojana",
         issuerwebsite: "https://skills.yourlearning.ibm.com/",
         issuer: "NIED Foundation",

@@ -827,3 +827,60 @@
     max-width: 100%;
   }
 }
+/* ================================
+   Certificate Logo - Mobile Fix
+================================ */
+@media (max-width: 768px) {
+  .certLogo {
+    width: 110px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: visible;
+    margin: 0 auto;
+  }
+
+  .certLogo a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .certLogo img {
+    width: 105px;
+    height: 105px;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .certLogoText {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .certLogoClick {
+    font-size: 9px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .certLogo {
+    width: 95px;
+    height: 115px;
+  }
+
+  .certLogo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .certLogoText {
+    font-size: 11px;
+  }
+}
