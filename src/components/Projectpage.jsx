@@ -4,6 +4,7 @@ import "../css/abc.css";
 import project1 from "../assets/image/php.png";
 import project2 from "../assets/image/portfolio.png";
 import project3 from "../assets/image/mern.png";
+import project4 from "../assets/image/auth_system.png";
 
 const projects = [
   {
@@ -36,6 +37,17 @@ const projects = [
       "A modern online shopping platform with authentication, cart management, order processing, and complete admin functionality.",
     link: "#",
   },
+  {
+id: "04",
+title: "AI-Powered Authentication & Security System",
+category: "Full Stack Cybersecurity Platform",
+image: project4,
+tech: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "AI/ML"],
+description:
+"A secure authentication platform integrated with an AI-driven security gateway, featuring OTP verification, password recovery, suspicious login detection, real-time security alerts, account protection, and intelligent threat monitoring.",
+link: "https://auth-security-frontend.onrender.com/",
+},
+
 ];
 
 function PortfolioPage() {
